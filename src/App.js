@@ -2,12 +2,12 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import Loading from './Loading'
 import Tours from './Tours';
-//const url = 'https://course-api.com/react-tours-project'
+
 function App() {
   const [loading, setLoading] = useState(true);
   const [tours, setTours] = useState([]);
-
   const url = 'https://course-api.com/react-tours-project';
+
   const fetchTours = async () => {
     setLoading(true);
     try {
@@ -19,7 +19,6 @@ function App() {
       setLoading(true);
       console.log(error);
     }
-    
   }
 
   useEffect(() => {
@@ -28,14 +27,14 @@ function App() {
 
   if (loading) {
     return (
-      <main>
+      <main className='homepage'>
         <Loading />
       </main>
     )
   }
   return (
-    <main>
-      <Tours />
+    <main className='homepage'>
+      <Tours tours={tours} />
     </main>
   );
 }
