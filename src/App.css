@@ -12,6 +12,11 @@ body {
   align-items: center;
   gap: 30px;
 }
+.tours .tours__title {
+  font-size: 2rem;
+  padding-bottom: 5px;
+  border-bottom: 2px solid hsl(240, 72%, 49%);
+}
 .tour {
   display: flex;
   flex-direction: column;
@@ -26,12 +31,19 @@ body {
   .tour {
     max-width: 340px;
   }
+  .tour .tour__info {
+    font-size: 0.875rem;
+  }
+  .tour .tour__title {
+    font-size: 1rem;
+  }
 }
 .tour .tour__header {
   display: flex;
   justify-content: space-around;
   align-items: center;
   width: 100%;
+  font-size: 1rem;
 }
 .tour .tour__image {
   width: 100%;
@@ -39,7 +51,10 @@ body {
   object-fit: cover;
 }
 .tour .tour__price {
-  color: hsl(0, 77%, 37%);
+  color: hsl(120, 100%, 25%);
   font-weight: 500;
   font-size: 1rem;
+  border-radius: 0.25rem;
+  padding: 2px 8px;
+  background-color: hsl(121deg 71% 84%);
 }
