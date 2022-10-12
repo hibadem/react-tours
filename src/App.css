@@ -1,3 +1,15 @@
+:root {
+  --button-color-primary: #b41313;
+  --button-color-secondary: #e41919;
+  --button-color-background: #ffffff;
+  --button-color-background-hover: #a89898;
+
+  --success-color-primary: #008000;
+  --success-color-secondary: #b9f3ba;
+
+  --title-color: #2323d7;
+}
+
 body {
   margin: 0;
   font-family: Roboto,-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
@@ -15,7 +27,7 @@ body {
 .tours .tours__title {
   font-size: 2rem;
   padding-bottom: 5px;
-  border-bottom: 2px solid hsl(240, 72%, 49%);
+  border-bottom: 2px solid var(--title-color);
 }
 .tour {
   display: flex;
@@ -51,10 +63,28 @@ body {
   object-fit: cover;
 }
 .tour .tour__price {
-  color: hsl(120, 100%, 25%);
+  color: var(--success-color-primary);
   font-weight: 500;
   font-size: 1rem;
   border-radius: 0.25rem;
   padding: 2px 8px;
-  background-color: hsl(121deg 71% 84%);
+  background-color: var(--success-color-secondary);
+}
+
+.tour .tour__delete-button {
+  margin-top: 1rem;
+  border: 1px solid var(--button-color-primary);
+  padding: 10px;
+  font-size: 1rem;
+  background-color: var(--button-color-background);
+  cursor: pointer;
+  color: var(--button-color-primary);
+}
+
+.tour .tour__delete-button:hover {
+  color: var(--button-color-secondary);
+}
+
+.tour__readmore {
+  color: var(--title-color);
 }
