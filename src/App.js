@@ -8,6 +8,11 @@ function App() {
   const [tours, setTours] = useState([]);
   const url = 'https://course-api.com/react-tours-project';
 
+  const removeTour = (id) => {
+    const newTours = tours.filter(tour => tour.id !== id);
+    setTours(newTours);
+  }
+
   const fetchTours = async () => {
     setLoading(true);
     try {
@@ -32,9 +37,17 @@ function App() {
       </main>
     )
   }
+  if (tours.length === 0) {
+    return (
+      <main className='notfound'>
+        <h2> No Tours Left</h2>
+        <button className="tour__button tour__button--refresh" onClick={() => fetchTours()}>Refresh</button>
+      </main>
+    )
+  }
   return (
     <main className='homepage'>
-      <Tours tours={tours} />
+      <Tours tours={tours} removeTour={removeTour}/>
     </main>
   );
 }
